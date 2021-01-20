@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block js %}{% endblock %}
+{% block pageReadyJS %}{% endblock %}
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="inner_container">
+        <p style="text-align:center;font-size:18px;">Some top rated movies for you</p>
+        <div class="row">
+            {% for movie in movies %}
+            <div class="col-sm-3">
+                <img src="{{ movie.img }}" style="width:auto;height:auto;"><br>
+                <p style="text-align: center;margin-top:5px;">
+                {{ movie.title }}
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

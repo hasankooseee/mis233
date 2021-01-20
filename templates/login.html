@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block js %}{% endblock %}
+{% block pageReadyJS %}{% endblock %}
+{% block css %}{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="inner_container">
+        <p style="text-align:center;">LOGIN TO YOUR ACCOUNT</p>
+        {% if request.POST %}
+            <p style="color:red;">* Wrong username or password</p>
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

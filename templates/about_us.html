@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block js %}{% endblock %}
+{% block pageReadyJS %}{% endblock %}
+{% block css %}
+<style>
+    #about_us .col-sm-4{
+        margin-bottom:20px;
+        text-align: center;
+    }
+    #about_us .col-sm-4 img{
+        width: 150px;
+        height: 150px;
+        margin-bottom: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="inner_container">
+        <p style="font-weight:bolder; font-size: 19px;">About Us</p><br>
+        <div class="row">
+            <div class="col-sm-10">
+            We are 3 MIS students at Boğaziçi University, trying to make people's movie choosing easier and enjoyable. We have created this site to minimize the time people waste while choosing a movie. After logging into our site, the system offers you 6 random movies. You can spend the time you lost while choosing a movie on more enjoyable jobs.
+                <br><br>
+                    Designed and made with ❤
+            </div>
+        </div>
+        <p style="font-weight:bolder; font-size: 19px;margin-top: 20px;">Team Members</p><br>
+        <div class="row" id="about_us">
+            <div class="col-sm-4">
+                <img src="{% static 'pp/tunahan.jpeg' %}"><br>
+                Tunahan Korulu
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'pp/pp3.jpeg' %}"><br>
+                İzzet Elpeze
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'pp/pp2.png' %}"><br>
+                Hasan Köse
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
